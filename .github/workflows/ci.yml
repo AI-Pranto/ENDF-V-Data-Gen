@@ -21,7 +21,7 @@ jobs:
         run: |
             docker build --tag nuc_data_maker .
             rm -rf h5_files
-            docker run -v /home/runner/work/${{ github.event.repository.name }}/${{ github.event.repository.name }}:/share nuc_data_maker /bin/bash -c "python data/generate_endf.py -d /share/h5_files --temperatures 550 600"
+            docker run -v /home/runner/work/${{ github.event.repository.name }}/${{ github.event.repository.name }}:/share nuc_data_maker /bin/bash -c "python data/generate_endf.py -d /share/h5_files --temperatures 470 1227"
       - name: Commit files
         run: |
           git config --local user.email "action@github.com"
